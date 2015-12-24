@@ -4,9 +4,9 @@ $(document).ready(function() {
 	  $(this).tab('show')
 	});
 
-	$('#placeholder-follow-button').click(function(event) {
+	$('#connect-btn').click(function(event) {
 		event.preventDefault();
-		window.location.href = 'https://twitter.com/m_pentenrieder';
+		window.location.href = 'https://www.linkedin.com/in/martinpentenrieder';
 	});
 
 	$('#msg-btn').click(function(event) {
