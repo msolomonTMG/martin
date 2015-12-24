@@ -1,26 +1,16 @@
-window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
- 
-  //t._e = [showTwitterButton];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));
-
+var is_mobile = false;
 
 $(document).ready(function() {
 	$('#tabs a').click(function (e) {
-	  e.preventDefault()
-	  $(this).tab('show')
+	  e.preventDefault();
+	  $(this).tab('show');
+	  //resizeContent($(this));
 	});
+
+    if( $('#mobile-indicator').css('display')=='none') {
+        is_mobile = true;
+        //resizeContent();    
+    }
 
 	$('#placeholder-follow-button').click(function(event) {
 		event.preventDefault();
@@ -33,20 +23,33 @@ $(document).ready(function() {
 	    var subject = 'Hi Martin!';
 	    window.location = 'mailto:' + email + '?subject=' + subject;
 	});
-
 });
 
-function showTwitterButton() {
-	twttr.widgets.createFollowButton(
-	  'm_pentenrieder',
-	  document.getElementById('twitter'),
-	  {
-	    size: 'large',
-	    showCount: false,
-	    showScreenName: "false",
-	    dnt: true
-	  }
-	).then(function (el) {
-		$('#placeholder-follow-button').hide();
-	});
+function resizeContent(el) {
+	console.log('resizing content');
+	console.log(el);
+	if (is_mobile == false) {
+		console.log('is mobile is false');
+		console.log(el.parent().hasClass('active'));
+		var sideBarHeight = $('.profile-sidebar-container').height();
+
+		if (el.parent().hasClass('active')) {
+			console.log(el[0].hash);
+			if (el[0].hash != '#experience') {
+				$('.profile-content').css('height', sideBarHeight);
+			}
+			else {
+				$('.profile-content').css('height', '520px');
+			}
+    		
+    	}
+	}
+	else if (is_mobile == true) {
+		$('.profile-content').css('height', '1000px');
+		if (el.parent().hasClass('active')) {
+			if (el[0].hash == '#contact') {
+				$('.profile-content').css('height', '600px');
+			}
+		}
+	}
 }
