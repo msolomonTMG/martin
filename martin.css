@@ -123,5 +123,6 @@ body {
 .profile-content {
   padding: 20px;
   background: #fff;
-  height: 600px;
+  height: 550px;
+  display: table;
 }
