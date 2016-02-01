@@ -249,7 +249,8 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/background.jpg) no-repeat center top;
+	background: 
+	url(../img/DSC09820_Fotor.jpg) no-repeat center top;
 	margin-top: 0px;
 	padding-top:120px;
 	text-align:center;
@@ -328,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;
 }
 .about {
-	background-image: url(../img/manhattan.jpg);
+	background-image: url(../img/golden-gate.jpg);
 }
 
 /* Portfolio Wrap Section */
@@ -367,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio {
-	background-image: url(../img/portfolio-sep.jpg);
+	background-image: url(../img/background3.jpg);
 }
 
 /* Service Wrap */
@@ -427,8 +428,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 13px;
 }
 
-.contact {
-	background-image: url(../img/contact-sep.jpg);
+.contact {background-image: url(../img/DSC09107_Fotor2-green.jpg);
 }
 
 #contactwrap label {
